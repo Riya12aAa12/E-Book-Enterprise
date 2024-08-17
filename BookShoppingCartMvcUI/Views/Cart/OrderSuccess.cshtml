@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Order Success";
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"]</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .success-message {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+            .success-message h1 {
+                font-size: 3rem;
+                color: #28a745; /* Bootstrap success color */
+            }
+
+            .success-message p {
+                font-size: 1.25rem;
+                color: #6c757d; /* Bootstrap text-muted color */
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-message">
+            <h1>🎉 Your Order Was Successful! 🎉</h1>
+            <p>Thank you for your purchase. Your order is being processed and you'll receive an email confirmation soon.</p>
+            <a class="btn btn-success" href="/Home/Index">Go to Home</a>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</html>

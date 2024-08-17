@@ -1,0 +1,113 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<body class="bg-image">
+    <div class="container">
+        <!-- Registration Form Section -->
+        <div class="form-container">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Email" class="form-control rounded-pill" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                            <label asp-for="Input.Email">Email</label>
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Password" type="password" class="form-control rounded-pill" autocomplete="new-password" aria-required="true" placeholder="Password" />
+                            <label asp-for="Input.Password">Password</label>
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.ConfirmPassword" type="password" class="form-control rounded-pill" autocomplete="new-password" aria-required="true" placeholder="Confirm Password" />
+                            <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        </div>
+
+                        <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary rounded-pill">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Content Section -->
+        <div class="additional-content">
+            <h3 class="text-center text-white">Welcome to the Bookstore!</h3>
+            <p class="text-center text-white">
+                Register to unlock exclusive deals, receive personalized book recommendations, and be the first to know about new releases.
+                Your journey to discovering great reads starts here!
+            </p>
+            <a href="/Identity/Account/Login" class="btn btn-outline-light d-block mx-auto">Already have an account? Log in</a>
+        </div>
+    </div>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+</body>
+
+<style>
+    /* Apply background image to the entire body */
+    .bg-image {
+        background-image: url('https://img.freepik.com/premium-photo/young-student-girl-with-lots-books-around-her_868749-1449.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* Optional: keeps the background fixed during scroll */
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between; /* Space between form and additional content */
+        align-items: flex-start; /* Align items to the top */
+        height: 100%;
+        padding: 20px;
+    }
+
+    .form-container, .additional-content {
+        flex: 1; /* Make both divs take equal space */
+    }
+
+    .form-container {
+        max-width: 500px;
+        margin-right: 20px; /* Space between the form and additional content */
+    }
+
+    .additional-content {
+        max-width: 400px;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        border-radius: 15px;
+        padding: 20px;
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+        border-radius: 15px;
+    }
+
+    .btn-outline-light {
+        color: #fff;
+        border-color: #fff;
+    }
+
+        .btn-outline-light:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+    h1, h2, h3 {
+        color: #fff; /* White color for headings to stand out against the background */
+    }
+
+    p {
+        color: #ddd; /* Light color for paragraphs */
+    }
+</style>

@@ -1,0 +1,153 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop class="bg-video">
+        <source src="https://videos.pexels.com/video-files/946146/946146-sd_640_360_30fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <!-- Login Form Section -->
+        <div class="login-container">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <form id="account" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Email" class="form-control rounded-pill" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                            <label asp-for="Input.Email" class="form-label">Email</label>
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Password" type="password" class="form-control rounded-pill" autocomplete="current-password" aria-required="true" placeholder="Password" />
+                            <label asp-for="Input.Password" class="form-label">Password</label>
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="checkbox mb-3">
+                            <label asp-for="Input.RememberMe" class="form-label remember-me-label">
+                                <input class="form-check-input" asp-for="Input.RememberMe" />
+                                @Html.DisplayNameFor(m => m.Input.RememberMe)
+                            </label>
+                        </div>
+
+                        <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary rounded-pill">Log in</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <p>
+                            <a id="forgot-password" asp-page="./ForgotPassword" class="text-light">Forgot your password?</a>
+                        </p>
+                        <p>
+                            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="text-light">Register as a new user</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+</body>
+
+<style>
+    /* Background Video */
+    .bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1; /* Place video behind other content */
+    }
+
+    /* Apply background video styles to the entire body */
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden; /* Hide scrollbars */
+    }
+
+    /* Container */
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 0;
+    }
+
+    /* Login Container */
+    .login-container {
+        max-width: 500px;
+        width: 100%;
+        margin-top: -70px; /* Move the form up further */
+    }
+
+    /* Card */
+    .card {
+        background-color: rgba(0, 0, 0, 0.8); /* Black with slight transparency */
+        border-radius: 15px;
+        color: #fff; /* White text color for contrast */
+    }
+
+    /* Card Body */
+    .card-body {
+        padding: 20px;
+    }
+
+    /* Input Fields */
+    .form-control {
+        background-color: #000; /* Black background */
+        border: 1px solid #007bff; /* Border color similar to the button */
+        color: #fff; /* White text color */
+    }
+
+        .form-control::placeholder {
+            color: #ddd; /* Light color for placeholder text */
+        }
+
+        .form-control:focus {
+            border-color: #0056b3; /* Highlight border color on focus */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle shadow on focus */
+        }
+
+    /* Button */
+    .btn-primary {
+        background-color: transparent; /* Transparent background */
+        border: 1px solid #007bff; /* Border color */
+        color: #007bff; /* Text color */
+    }
+
+        .btn-primary:hover {
+            background-color: rgba(0, 123, 255, 0.1); /* Light blue background on hover */
+            border-color: #0056b3; /* Darker border color on hover */
+            color: #0056b3; /* Darker text color on hover */
+        }
+
+    /* Remember Me Label */
+    .remember-me-label {
+        color: #fff; /* White text color */
+    }
+
+    /* Link Text */
+    .text-light {
+        color: #ddd; /* Light color for text links */
+    }
+
+    /* Centered Text */
+    .text-center p {
+        margin: 10px 0;
+    }
+</style>

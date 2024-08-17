@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"]</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px; /* Adjust as needed */
+        }
+
+        .dashboard-card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.8); /* Transparent background */
+            backdrop-filter: blur(10px); /* Blurred background effect */
+            border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+        }
+
+        .dashboard-card-header {
+            background-color: #001f3f; /* Navy Blue */
+            color: white;
+            padding: 1rem;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dashboard-card-body {
+            padding: 1rem;
+        }
+
+        .dashboard-card-footer {
+            background-color: #f1f1f1;
+            padding: 0.5rem;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .btn-custom {
+            background-color: #001f3f;
+            color: white;
+        }
+
+            .btn-custom:hover {
+                background-color: #001f3f;
+                color: white;
+            }
+
+        .card-icon {
+            font-size: 1.5rem;
+        }
+
+        .card-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 56px); /* Adjust height to exclude navbar height */
+        }
+
+        .row {
+            display: flex;
+            justify-content: center; /* Center cards horizontally */
+            gap: 1.5rem; /* Space between cards */
+        }
+
+        .col-md-4 {
+            flex: 1;
+            max-width: 300px; /* Set a maximum width for the cards */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Navigation bar content here -->
+    </nav>
+
+    <div class="container">
+        <div class="card-wrapper">
+            <div class="row">
+                <!-- Profile Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card dashboard-card">
+                        <div class="card-header dashboard-card-header">
+                            <i class="bi bi-person card-icon"></i>
+                            <h5 class="card-title">Profile</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">View and manage your profile.</p>
+                            <a href="/Identity/Account/Manage" class="btn btn-custom">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cart Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card dashboard-card">
+                        <div class="card-header dashboard-card-header">
+                            <i class="bi bi-cart4 card-icon"></i>
+                            <h5 class="card-title">Cart</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Manage items in the cart.</p>
+                            <a href="/Cart/GetUserCart" class="btn btn-custom">View Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Books Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card dashboard-card">
+                        <div class="card-header dashboard-card-header">
+                            <i class="bi bi-book card-icon"></i>
+                            <h5 class="card-title">Books</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Overview of available books.</p>
+                            <a href="/Home/Index" class="btn btn-custom">View Books</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

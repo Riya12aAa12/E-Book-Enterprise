@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"]</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+        .dashboard-card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-card-header {
+            background-color: #004080; /* Navy Blue */
+            color: white;
+            padding: 1rem;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .dashboard-card-body {
+            padding: 1rem;
+        }
+
+        .dashboard-card-footer {
+            background-color: #f1f1f1;
+            padding: 0.5rem;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .btn-custom {
+            background-color: #004080;
+            color: white;
+        }
+
+            .btn-custom:hover {
+                background-color: #003366;
+                color: white;
+            }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/Home/Index">EBookStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/AdminOperations/Dashboard">Dashboard</a>
+                    </li>
+                    <!-- Add other navigation links here -->
+                </ul>
+                <partial name="_LoginPartial" />
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <h1 class="mb-4">Admin Dashboard</h1>
+        <div class="row">
+            <!-- Orders Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card dashboard-card">
+                    <div class="card-header dashboard-card-header">
+                        <h5 class="card-title">Orders</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">View and manage all orders.</p>
+                        <a href="/AdminOperations/AllOrders" class="btn btn-custom">View Orders</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Cart Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card dashboard-card">
+                    <div class="card-header dashboard-card-header">
+                        <h5 class="card-title">Cart</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Manage items in the cart.</p>
+                        <a href="/Cart/Index" class="btn btn-custom">View Cart</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards here -->
+            <div class="col-md-4 mb-4">
+                <div class="card dashboard-card">
+                    <div class="card-header dashboard-card-header">
+                        <h5 class="card-title">Statistics</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Overview of key statistics.</p>
+                        <a href="/AdminOperations/Statistics" class="btn btn-custom">View Statistics</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
